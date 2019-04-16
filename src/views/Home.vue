@@ -5,10 +5,10 @@
 <br><br><br>
 
 <div class="image">
-<img id="teamPic" src="teamPic.jpeg" alt="teamPic">
+<img id="teamPic" src="teamPicture.jpg" alt="teamPic">
 <br><br><br><br>
 </div>
-<p class="btm" id="margins" style="text-align:center">The Grand Valley State University Ultimate Frisbee Club was officially 
+<p class="btm" id="margins">The Grand Valley State University Ultimate Frisbee Club was officially 
 recognizes as a club by the university in 1998 The club was  developed in order to promote the game of ultimate 
 frisbee for all persons regardless of ability, age, or gender. This club provides an opportunity for players of all 
 skill levels to compete in an environment where the fundamental aspect of ultimate Frisbee, SPIRIT OF THE GAME, 
@@ -42,15 +42,15 @@ h1 {
   margin-bottom:100px
 }
 #margins{
-  text-align:start;
+  text-align:left;
   margin-right: 250px;
-  margin-left: 250px;
+  margin-left: 20%;
   font-size:20px;
 }
 #teamPic{
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
-  width: 350px;
+  width: 550px;
 }
 </style>
