@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title>Club Manager App</title>
-    <style>
-      body {
-        background: url("//d21gd0ap5v1ndt.cloudfront.net/web02/gvsusls/images_web/siteBg.jpg")
-          no-repeat fixed center top #a3a3a3;
-      }
-      .back {
-        z-index: -1;
-        width: 1000px;
-        height: 200%;
-        top: 50%;
-        left: 50%;
-        margin-top: -500px;
-        margin-left: -500px;
-        position: fixed;
-      }
-    </style>
-  </head>
-  <body>
-    <noscript>
-      <strong
-        >We're sorry but club_manager doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
-    </noscript>
-    <div id="app"></div>
-    <img src="white.jpg" class="back" />
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+  <title>Club Manager App</title>
+  <style>
+    body {
+      background: url("//d21gd0ap5v1ndt.cloudfront.net/web02/gvsusls/images_web/siteBg.jpg") no-repeat fixed center top #a3a3a3;
+    }
+
+    .back {
+      z-index: -1;
+      width: 1000px;
+      height: 200%;
+      top: 50%;
+      left: 50%;
+      margin-top: -500px;
+      margin-left: -500px;
+      position: fixed;
+    }
+
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but club_manager doesn't work properly without JavaScript
+      enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <img src="white.jpg" class="back" />
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

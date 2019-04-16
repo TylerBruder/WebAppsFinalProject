@@ -5,6 +5,7 @@ import Add from "./components/AddTodo.vue";
 import Login from "./components/login.vue";
 import Create from "./components/Create.vue";
 import Logout from "./components/Logout.vue";
+import Members from "./components/Members.vue";
 import firebase from "firebase";
 
 Vue.use(Router);
@@ -51,6 +52,11 @@ let router = new Router({
       path: "/create",
       name: "create",
       component: Create
+    },
+    {
+      path: "/Members",
+      name: "Member",
+      component: Members
     }
   ]
 });

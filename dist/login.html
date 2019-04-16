@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login to Club Manager</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="login">
+      <input id="txtEmail" class="box" type="email" placeholder="Email" />
+      <input
+        id="txtPassword"
+        class="box"
+        type="password"
+        placeholder="Password"
+      />
+      <button id="btnLogin" class="btn btn-action">Log in</button>
+      <button id="btnSignUp" class="btn btn-secondary">Sign up</button>
+      <button id="btnLogout" class="btn btn-action hide">Log out</button>
+    </div>
+  </body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCjTtqJUNRWVq1hHIa8Q-NqQs4wWBoODPU",
+    authDomain: "webappsfinalproject.firebaseapp.com",
+    databaseURL: "https://webappsfinalproject.firebaseio.com",
+    projectId: "webappsfinalproject",
+    storageBucket: "webappsfinalproject.appspot.com",
+    messagingSenderId: "641647924095"
+  };
+  firebase.initializeApp(config);
+
+  var loggedIn = 0;
+
+  // Get elements
+  const txtEmail = document.getElementById("txtEmail");
+  const txtPassword = document.getElementById("txtPassword");
+  const btnLogin = document.getElementById("btnLogin");
+  const btnSignUp = document.getElementById("btnSignUp");
+  const btnLogout = document.getElementById("btnLogout");
+
+  // Add login event
+  btnLogin.addEventListener("click", e => {
+    // Get email and password
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // Log in
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+    loggedIn = 1;
+  });
+
+  // Add signup event
+  btnSignUp.addEventListener("click", e => {
+    // Get email and password
+    // TODO: check for real emails FIXME
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // Sign up
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.then(user => console.log(user)).catch(e => console.log(e.message));
+    loggedIn = 1;
+  });
+
+  // Add logout event
+  btnLogout.addEventListener("click", e => {
+    firebase.auth().signOut();
+  });
+
+  // Add a realtime listener
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+      console.log(firebaseUser);
+      btnLogout.classList.remove("hide");
+    } else {
+      console.log("logged out");
+      btnLogout.classList.add("hide");
+      sessionStorage.online = 0;
+    }
+    if (loggedIn == 1) {
+      window.location = "App.vue";
+      loggedIn == 2;
+      sessionStorage.online = 1;
+    }
+  });
+</script>

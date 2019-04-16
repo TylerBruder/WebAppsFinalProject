@@ -1,59 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <AddTodo v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
-  </div>
+<div>
+<br>
+<h1>Grand Valley State University Ultimate Frisbee Club</h1>
+<br><br><br>
+
+<div class="image">
+<img id="teamPic" src="teamPic.jpeg" alt="teamPic">
+<br><br><br><br>
+</div>
+<p class="btm" id="margins" style="text-align:center">The Grand Valley State University Ultimate Frisbee Club was officially 
+recognizes as a club by the university in 1998 The club was  developed in order to promote the game of ultimate 
+frisbee for all persons regardless of ability, age, or gender. This club provides an opportunity for players of all 
+skill levels to compete in an environment where the fundamental aspect of ultimate Frisbee, SPIRIT OF THE GAME, 
+is stressed. While competitive ultimate is encouraged, emphasis remains on highlighting the main reasons for playing 
+ultimate: <br><br> 1. A great way to meet new people and make lasting friendships. <br>
+2. It substitutes a DIE-HARD mentality with a sportsmanship-focused enviorment. <br>
+3. It's a more exciting alternative for an aerobic workout <br>
+4. Its FUN!! <br><br><br>
+
+If YOU are interested in joining the club, please check out the <i>resources</i> tab! </p>
+</div>
 </template>
 
-<script>
-import Todos from "../components/Todos";
-import AddTodo from "../components/AddTodo";
 
-export default {
-  name: "Home",
-  components: {
-    Todos,
-    AddTodo
-  },
-  data() {
-    return {
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    };
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    },
-    addTodo(newTodo) {
-      this.todos = [...this.todos, newTodo];
-    }
-  }
-};
-</script>
+
 
 <style>
-img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -63,15 +35,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
 }
-.btn {
-  display: inline-block;
-  border: none;
-  background: #555;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
+h1 {
+  text-align:center;
 }
-.btn:hover {
-  background: #666;
+.btm{
+  margin-bottom:100px
+}
+#margins{
+  text-align:start;
+  margin-right: 250px;
+  margin-left: 250px;
+  font-size:20px;
+}
+#teamPic{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 350px;
 }
 </style>
