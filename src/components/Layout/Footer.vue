@@ -1,8 +1,10 @@
 <template>
+<div id="wrapper">
   <footer class="footer">
     <p class="txt">Club Manager App Created By: Justin Perticone, Tyler Bruder, and Marshal Brummel</p>
     <p class="txt">Background-image from: http://www.gvsuclubsports.com/</p>
   </footer>
+  </div>
 </template>
 
 <script>
@@ -17,12 +19,15 @@ export default {
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 500px;
   line-height: 100%;
-  position: relative;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+#wrapper {
+  min-height: 100%;
+  position: relative;
 }
 .txt {
   font-weight: 100;

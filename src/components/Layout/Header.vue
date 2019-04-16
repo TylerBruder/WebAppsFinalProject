@@ -5,7 +5,7 @@
     <router-link to="/about" class="a">About</router-link>|
     <router-link to="/about" class="a">Announcements</router-link>|
     <router-link to="/about" class="a">Events</router-link>|
-    <router-link to="/adds" class="a">Members</router-link>|
+    <router-link to="/Members" class="a">Members</router-link>|
     <router-link to="/about" class="a">Resources</router-link>
     <br>
     <router-link to="/login" class="c" id="c">Account</router-link>
